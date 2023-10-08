@@ -12,7 +12,6 @@ import 'package:movie_app/movies/domain/entities/genres.dart';
 import 'package:movie_app/movies/presentation/controller/movie_details_bloc.dart';
 import 'package:movie_app/movies/presentation/controller/movie_details_event.dart';
 import 'package:movie_app/movies/presentation/controller/movie_details_state.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:animate_do/animate_do.dart';
 
 class MovieDetailScreen extends StatelessWidget {

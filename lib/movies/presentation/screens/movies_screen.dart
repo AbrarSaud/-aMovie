@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/services/services_locator.dart';
@@ -49,10 +48,10 @@ class MoviesScreen extends StatelessWidget {
                           onTap: () {
                             /// TODO : NAVIGATION TO POPULAR SCREEN
                           },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
                             child: Row(
-                              children: const [
+                              children: [
                                 Text(
                                   AppString.seeMore,
                                   style: TextStyle(
@@ -95,10 +94,10 @@ class MoviesScreen extends StatelessWidget {
                           onTap: () {
                             /// TODO : NAVIGATION TO Top Rated Movies Screen
                           },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
                             child: Row(
-                              children: const [
+                              children: [
                                 Text(
                                   AppString.seeMore,
                                   style: TextStyle(

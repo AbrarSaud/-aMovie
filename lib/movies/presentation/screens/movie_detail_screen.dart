@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_fadein/flutter_fadein.dart';
+// import 'package:flutter_fadein/flutter_fadein.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/core/network/api_constance.dart';
 import 'package:movie_app/core/services/services_locator.dart';
@@ -205,7 +205,7 @@ class MovieDetailContent extends StatelessWidget {
                 // Tab(text: 'More like this'.toUpperCase()),
                 SliverPadding(
                   padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 24.0),
-                  sliver: _showRecommendations(),
+                  // sliver: _showRecommendations(),
                 ),
               ],
             );
@@ -240,47 +240,47 @@ class MovieDetailContent extends StatelessWidget {
     }
   }
 
-  Widget _showRecommendations() {
-    return BlocBuilder<MovieDetailsBloc, MovieDetailsState>(
-      builder: (context, state) => SliverGrid(
-        delegate: SliverChildBuilderDelegate(
-          (context, index) {
-            final recommendation = state.recommendation[index];
-            return FadeInUp(
-              from: 20,
-              duration: const Duration(milliseconds: 500),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(4.0)),
-                child: CachedNetworkImage(
-                  imageUrl: ApiConstance.imageUrl(recommendation.backdropPath!),
-                  placeholder: (context, url) => Shimmer.fromColors(
-                    baseColor: Colors.grey[850]!,
-                    highlightColor: Colors.grey[800]!,
-                    child: Container(
-                      height: 170.0,
-                      width: 120.0,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                  ),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                  height: 180.0,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            );
-          },
-          // childCount: recommendationDummy.length,
-        ),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          mainAxisSpacing: 8.0,
-          crossAxisSpacing: 8.0,
-          childAspectRatio: 0.7,
-          crossAxisCount: 3,
-        ),
-      ),
-    );
-  }
+  // Widget _showRecommendations() {
+  //   return BlocBuilder<MovieDetailsBloc, MovieDetailsState>(
+  //     builder: (context, state) => SliverGrid(
+  //       delegate: SliverChildBuilderDelegate(
+  //         (context, index) {
+  //           final recommendation = state.recommendation[index];
+  //           return FadeInUp(
+  //             from: 20,
+  //             duration: const Duration(milliseconds: 500),
+  //             child: ClipRRect(
+  //               borderRadius: const BorderRadius.all(Radius.circular(4.0)),
+  //               child: CachedNetworkImage(
+  //                 imageUrl: ApiConstance.imageUrl(recommendation.backdropPath!),
+  //                 placeholder: (context, url) => Shimmer.fromColors(
+  //                   baseColor: Colors.grey[850]!,
+  //                   highlightColor: Colors.grey[800]!,
+  //                   child: Container(
+  //                     height: 170.0,
+  //                     width: 120.0,
+  //                     decoration: BoxDecoration(
+  //                       color: Colors.black,
+  //                       borderRadius: BorderRadius.circular(8.0),
+  //                     ),
+  //                   ),
+  //                 ),
+  //                 errorWidget: (context, url, error) => const Icon(Icons.error),
+  //                 height: 180.0,
+  //                 fit: BoxFit.cover,
+  //               ),
+  //             ),
+  //           );
+  //         },
+  //         // childCount: recommendationDummy.length,
+  //       ),
+  //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+  //         mainAxisSpacing: 8.0,
+  //         crossAxisSpacing: 8.0,
+  //         childAspectRatio: 0.7,
+  //         crossAxisCount: 3,
+  //       ),
+  //     ),
+  //   );
+  // }
 }

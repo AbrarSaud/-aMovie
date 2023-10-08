@@ -14,9 +14,11 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+
       // title: AppString.appName,
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Colors.grey.shade900,
+        scaffoldBackgroundColor: const Color(0xff111827),
       ),
       home: const MoviesScreen(),
     );

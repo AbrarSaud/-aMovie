@@ -6,6 +6,7 @@ import 'package:movie_app/core/network/api_constance.dart';
 import 'package:movie_app/core/utils/enums.dart';
 import 'package:movie_app/movies/presentation/controller/movies_bloc.dart';
 import 'package:movie_app/movies/presentation/controller/movies_state.dart';
+import 'package:movie_app/movies/presentation/screens/movie_detail_screen.dart';
 import 'package:shimmer/shimmer.dart';
 
 class TopRatedComponent extends StatelessWidget {
@@ -41,7 +42,15 @@ class TopRatedComponent extends StatelessWidget {
                         padding: const EdgeInsets.only(right: 8.0),
                         child: InkWell(
                           onTap: () {
-                            /// TODO : NAVIGATE TO  MOVIE DETAILS
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    MovieDetailScreen(
+                                  id: movie.id,
+                                ),
+                              ),
+                            );
                           },
                           child: ClipRRect(
                             borderRadius:
